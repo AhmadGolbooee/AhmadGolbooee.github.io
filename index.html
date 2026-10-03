@@ -3,101 +3,254 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmad Golbooee — Software Developer</title>
-  <meta name="description" content="Portfolio and resume of Ahmad Golbooee — software developer and physics student at Isfahan University of Technology." />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0b0f14" id="metaThemeColor" />
+
+  <title id="pageTitle">Ahmad Golbooee — Software Developer</title>
+  <meta name="description" id="metaDescription" content="Portfolio and resume of Ahmad Golbooee — software developer and physics student at Isfahan University of Technology." />
+  <meta name="author" content="Ahmad Golbooee" />
+  <link rel="canonical" href="https://ahmadgolbooee.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ahmad Golbooee" />
+  <meta property="og:title" id="ogTitle" content="Ahmad Golbooee — Software Developer" />
+  <meta property="og:description" id="ogDesc" content="Portfolio and resume of Ahmad Golbooee — software developer and physics student at Isfahan University of Technology." />
+  <meta property="og:url" content="https://ahmadgolbooee.github.io/" />
+  <meta property="og:image" content="https://ahmadgolbooee.github.io/assets/img/og-image.png" />
+  <meta property="og:locale" id="ogLocale" content="en_US" />
+  <meta property="og:locale:alternate" content="fa_IR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twTitle" content="Ahmad Golbooee — Software Developer" />
+  <meta name="twitter:description" id="twDesc" content="Software developer and physics student at Isfahan University of Technology." />
+  <meta name="twitter:image" content="https://ahmadgolbooee.github.io/assets/img/og-image.png" />
+
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/print.css" media="print" />
+
+  <script type="application/ld+json" id="jsonldPerson">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmad Golbooee",
+    "url": "https://ahmadgolbooee.github.io",
+    "email": "mailto:AhmadGolbooee.Main@gmail.com",
+    "jobTitle": "Software Developer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Isfahan", "addressCountry": "IR" },
+    "sameAs": ["https://github.com/AhmadGolbooee"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Isfahan University of Technology"
+    },
+    "knowsAbout": ["C", "C++", "Python", "NumPy", "Matplotlib", "Computational Physics", "Numerical Methods"]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
   <div class="bg-grid" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
 
   <header class="topbar">
     <a class="brand" href="#home">
       <span class="brand-mark">AG</span>
-      <span class="brand-name">Ahmad Golbooee</span>
+      <span class="brand-name" data-i18n="brand">Ahmad Golbooee</span>
     </a>
-    <nav class="nav" id="nav">
-      <a href="#home" data-i18n="nav.home">Home</a>
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#stack" data-i18n="nav.stack">Stack</a>
-      <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#now" data-i18n="nav.now">Now</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#home" data-nav="home" class="active"><span data-t="ui.home"></span></a>
+      <a href="#about" data-nav="about"><span data-t="ui.about"></span></a>
+      <a href="#skills" data-nav="skills"><span data-t="ui.skills"></span></a>
+      <a href="#journey" data-nav="journey"><span data-t="ui.journey"></span></a>
+      <a href="#projects" data-nav="projects"><span data-t="ui.projects"></span></a>
+      <a href="#now" data-nav="now"><span data-t="ui.now"></span></a>
+      <a href="#contact" data-nav="contact"><span data-t="ui.contact"></span></a>
     </nav>
+
     <div class="controls">
-      <button id="langToggle" class="btn-icon" type="button" aria-label="Switch language">
-        <span class="lang-label" id="langLabel">فارسی</span>
+      <button id="langToggle" class="btn-icon lang" type="button" title="Switch language">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-3a15.6 15.6 0 0 0-1.3-3.6A8 8 0 0 1 18.9 8ZM12 4.1c.6.9 1.2 2.2 1.7 3.9h-3.4c.5-1.7 1.1-3 1.7-3.9ZM4.3 14a8 8 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h3a15.6 15.6 0 0 0 1.3 3.6A8 8 0 0 1 5.1 16Zm3-8h-3a8 8 0 0 1 4.3-3.6A15.6 15.6 0 0 0 8.1 8ZM12 19.9c-.6-.9-1.2-2.2-1.7-3.9h3.4c-.5 1.7-1.1 3-1.7 3.9Zm2.1-5.9H9.9a14.7 14.7 0 0 1 0-4h4.2a14.7 14.7 0 0 1 0 4Zm.5 5.6a15.6 15.6 0 0 0 1.3-3.6h3a8 8 0 0 1-4.3 3.6Zm1.8-5.6a16.5 16.5 0 0 0 0-4h3.4a8 8 0 0 1 0 4h-3.4Z"/></svg>
+        <span id="langLabel">فارسی</span>
       </button>
-      <button id="themeToggle" class="btn-icon" type="button" aria-label="Toggle theme">
-        <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        <svg class="ico-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1Zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm8-6a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm-14 0a1 1 0 0 1-1 1H4a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1Zm10.5-5.5a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0Zm-9 9a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0Zm8 2.8a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 1 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4Zm-7-9a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 1 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4Z"/></svg>
+
+      <button id="themeToggle" class="btn-icon" type="button" title="Toggle theme">
+        <svg class="ico-moon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1Zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm8-6a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm-14 0a1 1 0 0 1-1 1H4a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1Zm10.5-5.5a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0Zm-9 9a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0Zm8 2.8a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 1 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4Zm-7-9a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 1 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4Z"/></svg>
       </button>
-      <button id="menuToggle" class="btn-icon only-mobile" type="button" aria-label="Menu">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+
+      <button id="printBtn" class="btn-icon" type="button" title="Print / Save as PDF">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M7 3h10v4H7V3Zm-3 6h16a2 2 0 0 1 2 2v6h-4v4H6v-4H2v-6a2 2 0 0 1 2-2Zm5 8h6v4H9v-4Z"/></svg>
+      </button>
+
+      <button id="cmdBtn" class="btn-icon" type="button" title="Command palette (Ctrl+K)">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M4 5h16v2H4zm0 6h10v2H4zm0 6h16v2H4z"/></svg>
+      </button>
+
+      <button id="menuToggle" class="btn-icon only-mobile" type="button" title="Menu">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
       </button>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero wrap">
+  <main id="main">
+    <section id="home" class="hero wrap">
       <div class="hero-text">
-        <p class="eyebrow"><span class="dot"></span><span data-i18n="hero.available"></span></p>
-        <h1 data-i18n="hero.name">Ahmad Golbooee</h1>
-        <p class="hero-role"><span data-i18n="hero.role"></span></p>
-        <p class="hero-loc" data-i18n="hero.location"></p>
+        <p class="eyebrow"><span class="dot"></span><span data-t="hero.available"></span></p>
+        <h1 class="hero-name" data-t="hero.name"></h1>
+        <p class="hero-role">
+          <span class="caret" aria-hidden="true"></span>
+          <span id="typedRole" class="typed"></span>
+        </p>
+        <p class="hero-loc">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6.5a2.5 2.5 0 0 0 0 5Z"/></svg>
+          <span data-t="hero.location"></span>
+        </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaContact"></a>
+          <a class="btn btn-primary" href="#contact"><span data-t="hero.ctaContact"></span></a>
+          <a class="btn btn-ghost" href="#journey"><span data-t="hero.ctaResume"></span></a>
           <a class="btn btn-ghost" href="https://github.com/AhmadGolbooee" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38l-.01-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-            GitHub
+            <span data-t="hero.ctaGithub"></span>
           </a>
         </div>
+        <dl class="stats" id="statsRow"></dl>
       </div>
-      <div class="hero-card">
-        <img src="https://avatars.githubusercontent.com/u/337410342?v=4" alt="Ahmad Golbooee" width="150" height="150" />
-        <dl class="mini-facts">
-          <div><dt data-i18n="facts.role"></dt><dd data-i18n="facts.roleVal"></dd></div>
-          <div><dt data-i18n="facts.focus"></dt><dd data-i18n="facts.focusVal"></dd></div>
-          <div><dt data-i18n="facts.base"></dt><dd data-i18n="facts.baseVal"></dd></div>
-        </dl>
+
+      <div class="hero-side">
+        <div class="hero-card">
+          <div class="avatar-ring">
+            <img src="https://avatars.githubusercontent.com/u/337410342?v=4" alt="Ahmad Golbooee" width="150" height="150" />
+          </div>
+          <dl class="mini-facts">
+            <div><dt data-t="facts.role"></dt><dd data-t="facts.roleVal"></dd></div>
+            <div><dt data-t="facts.focus"></dt><dd data-t="facts.focusVal"></dd></div>
+            <div><dt data-t="facts.base"></dt><dd data-t="facts.baseVal"></dd></div>
+          </dl>
+        </div>
+
+        <div class="code-card" aria-hidden="true">
+          <div class="code-head"><span></span><span></span><span></span><em>physics.py</em></div>
+          <pre class="code-body"><code id="codeRotator"></code></pre>
+        </div>
       </div>
     </section>
 
     <section id="about" class="wrap section">
-      <h2 class="section-title"><span class="hash">#</span><span data-i18n="about.title"></span></h2>
-      <p class="lead" data-i18n="about.body"></p>
-      <p class="lead" data-i18n="about.body2"></p>
+      <h2 class="section-title"><span class="hash">#</span><span data-t="about.title"></span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead" data-t="about.lead"></p>
+          <div id="aboutParas"></div>
+        </div>
+        <aside class="facts-card">
+          <h3 data-t="about.funFactsTitle"></h3>
+          <ul id="funFacts"></ul>
+        </aside>
+      </div>
     </section>
 
-    <section id="stack" class="wrap section">
-      <h2 class="section-title"><span class="hash">#</span><span data-i18n="stack.title"></span></h2>
-      <div class="grid-3" id="stackGrid"></div>
+    <section id="skills" class="wrap section">
+      <h2 class="section-title"><span class="hash">#</span><span data-t="skills.title"></span></h2>
+      <p class="section-sub" data-t="skills.subtitle"></p>
+      <div class="grid-2" id="skillsGrid"></div>
+      <div class="legend">
+        <span class="legend-item"><i class="sw core"></i><span data-t="skills.legendCore"></span></span>
+        <span class="legend-item"><i class="sw learning"></i><span data-t="skills.legendLearning"></span></span>
+      </div>
+    </section>
+
+    <section id="journey" class="wrap section">
+      <h2 class="section-title"><span class="hash">#</span><span data-t="journey.title"></span></h2>
+      <p class="section-sub" data-t="journey.subtitle"></p>
+      <ol class="timeline" id="timeline"></ol>
     </section>
 
     <section id="projects" class="wrap section">
-      <h2 class="section-title"><span class="hash">#</span><span data-i18n="projects.title"></span></h2>
+      <h2 class="section-title"><span class="hash">#</span><span data-t="projects.title"></span></h2>
+      <p class="section-sub" data-t="projects.subtitle"></p>
+      <div class="filters" id="projectFilters" role="tablist"></div>
       <div class="grid-2" id="projectsGrid"></div>
+      <p class="empty-note section-sub" id="projectsEmpty" hidden></p>
     </section>
 
     <section id="now" class="wrap section">
-      <h2 class="section-title"><span class="hash">#</span><span data-i18n="now.title"></span></h2>
+      <h2 class="section-title"><span class="hash">#</span><span data-t="now.title"></span></h2>
+      <p class="section-sub" data-t="now.subtitle"></p>
       <div class="grid-3" id="nowGrid"></div>
+      <h3 class="sub-title" data-t="now.interestsTitle"></h3>
+      <div class="chips" id="interests"></div>
     </section>
 
     <section id="contact" class="wrap section">
-      <h2 class="section-title"><span class="hash">#</span><span data-i18n="contact.title"></span></h2>
-      <p class="lead" data-i18n="contact.body"></p>
-      <div class="contact-row" id="contactRow"></div>
+      <h2 class="section-title"><span class="hash">#</span><span data-t="contact.title"></span></h2>
+      <p class="lead" data-t="contact.lead"></p>
+      <div class="contact-grid">
+        <div class="contact-channels" id="contactChannels"></div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <label>
+            <span data-t="ui.formName"></span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            <span data-t="ui.formEmail"></span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span data-t="ui.formMessage"></span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">
+            <span data-t="ui.sendMessage"></span>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 20V4l18 8-18 8Zm2-3l11.2-5L5 7v3.5L13 12 5 13.5V17Z"/></svg>
+          </button>
+          <p class="form-note" data-t="ui.formNote"></p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <p><span id="footYear"></span> · <span data-i18n="foot.built"></span></p>
+  <footer class="wrap footer">
+    <div class="footer-row">
+      <p id="footCopy"></p>
+      <div class="footer-links">
+        <a href="https://github.com/AhmadGolbooee" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/AhmadGolbooee/AhmadGolbooee.github.io" target="_blank" rel="noopener" data-t="ui.sourceCode"></a>
+        <button class="link-btn" id="vcardBtn" type="button" data-t="ui.downloadVCard"></button>
+        <button class="link-btn" id="footTop" type="button" data-t="ui.backToTop"></button>
+      </div>
+    </div>
   </footer>
 
+  <button id="toTop" class="to-top" type="button" title="Back to top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="m12 6 8 8-1.4 1.4L13 9.8V18h-2V9.8L5.4 15.4 4 14Z"/></svg>
+  </button>
+
+  <div class="palette" id="palette" hidden>
+    <div class="palette-backdrop" data-close></div>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
+      <input id="paletteInput" type="text" placeholder="Search commands…" autocomplete="off" />
+      <ul id="paletteList"></ul>
+      <p class="palette-empty" id="paletteEmpty" hidden></p>
+      <footer class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> run · <kbd>Esc</kbd> close</footer>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/content.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

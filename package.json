@@ -1,0 +1,14 @@
+{
+  "name": "ahmadgolbooee.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Bilingual resume website for Ahmad Golbooee, hosted on GitHub Pages.",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "test": "node tools/smoke-test.cjs",
+    "assets": "python tools/build-assets.py"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.1"
+  }
+}

@@ -95,7 +95,7 @@ Add or remove a channel with `copy: true` to get a copy-to-clipboard button.
 
 ## Features
 
-- **Bilingual** with a one-click switch, full RTL layout, and language remembered per visitor
+- **Bilingual** with a one-click switch, full RTL layout, and language remembered per visitor. English is the default — the browser's language is ignored, so everyone sees English first unless they switch to Persian themselves
 - **Dark / light theme**, follows `prefers-color-scheme`, remembered per visitor
 - **Command palette** — `Ctrl`/`Cmd` + `K` or `/`: jump to a section, toggle theme, switch language, print, export contact
 - **Animated skill bars** with core vs. learning distinction

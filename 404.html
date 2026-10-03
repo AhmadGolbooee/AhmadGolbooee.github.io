@@ -40,10 +40,9 @@
       else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
         document.documentElement.dataset.theme = "light";
       }
-      var fa = false;
-      try { fa = localStorage.getItem("ag:lang") === "fa"; } catch (e) {
-        fa = (navigator.language || "en").toLowerCase().indexOf("fa") === 0;
-      }
+      var lang = "en";
+      try { lang = localStorage.getItem("ag:lang") === "fa" ? "fa" : "en"; } catch (e) {}
+      var fa = lang === "fa";
       document.documentElement.lang = fa ? "fa" : "en";
       document.documentElement.dir = fa ? "rtl" : "ltr";
       document.querySelectorAll("[data-en]").forEach(function (el) {

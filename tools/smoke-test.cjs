@@ -33,7 +33,8 @@ const checks = [];
 const check = (name, cond, extra) => checks.push({ name, ok: !!cond, extra });
 
 check("no runtime errors", errors.length === 0, errors.join(" | "));
-check("dir=ltr for en", $("html").dir === "ltr", $("html").dir);
+check("defaults to english", $("html").lang === "en" && $("html").dir === "ltr", $("html").lang + "/" + $("html").dir);
+check("hero shows english name", $("#pageTitle").textContent.includes("Ahmad"), $("#pageTitle").textContent);
 check("nav labels rendered", $$(".nav a").every((a) => a.textContent.trim().length > 0));
 check("stats rendered", $$("#statsRow .stat").length === 4);
 check("about paragraphs rendered", $$("#aboutParas p").length === 3);
@@ -92,6 +93,24 @@ const form = $("#contactForm");
 form.querySelector('[name="name"]').value = "";
 form.dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
 check("empty form blocked", $("#toast").classList.contains("show") === true);
+
+
+const dom2 = new JSDOM(html, {
+  url: "https://ahmadgolbooee.github.io/",
+  runScripts: "outside-only",
+  pretendToBeVisual: true,
+  virtualConsole: vc
+});
+const w2 = dom2.window;
+Object.defineProperty(w2.navigator, "language", { value: "fa-IR", configurable: true });
+Object.defineProperty(w2.navigator, "languages", { value: ["fa-IR", "en"], configurable: true });
+w2.matchMedia = window.matchMedia;
+w2.scrollTo = () => {};
+w2.eval(fs.readFileSync(path.join(root, "assets/js/content.js"), "utf8") + "\n;\n" + fs.readFileSync(path.join(root, "assets/js/app.js"), "utf8"));
+w2.document.dispatchEvent(new w2.Event("DOMContentLoaded", { bubbles: true }));
+check("persian browser still defaults to english", w2.document.documentElement.lang === "en" && w2.document.documentElement.dir === "ltr", w2.document.documentElement.lang);
+check("persian browser renders english nav", w2.document.querySelector(".nav a").textContent.trim() === "Home", w2.document.querySelector(".nav a").textContent);
+w2.close();
 
 console.log("");
 let failed = 0;

@@ -126,9 +126,7 @@ const CONTACTS = [
 const html = document.documentElement;
 const t = (k) => I18N[lang][k] || I18N.en[k] || k;
 
-let lang =
-  localStorage.getItem("lang") ||
-  ((navigator.language || "en").toLowerCase().startsWith("fa") ? "fa" : "en");
+let lang = localStorage.getItem("lang") === "fa" ? "fa" : "en";
 
 function render() {
   html.lang = lang;

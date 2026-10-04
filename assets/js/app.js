@@ -25,7 +25,10 @@
 
   const detectLang = () => {
     const saved = store.get("lang", null);
-    return saved === "fa" ? "fa" : "en";
+    if (saved === "fa" || saved === "en") return saved;
+    const nav = (navigator.language || "en").toLowerCase();
+    const list = (navigator.languages || [nav]).map((l) => l.toLowerCase());
+    return list.some((l) => l.indexOf("fa") === 0 || l.indexOf("pe") === 0) ? "fa" : "en";
   };
 
   let lang = detectLang();

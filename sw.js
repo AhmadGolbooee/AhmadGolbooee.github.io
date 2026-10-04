@@ -1,4 +1,4 @@
-const CACHE = "ag-site-v2";
+const CACHE = "ag-site-v1";
 const CORE = [
   "/",
   "/index.html",
